@@ -180,14 +180,15 @@ namespace LoginRegistrationApp.Controllers
             var verifyUrl = "/User/VerifyAccount/" + activationCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
-            var senderEmail = new MailAddress("nenefrank41@gmail.com", "Learn with Marv");
-            var senderPassword = "m4crystfs1998";
+            var senderEmail = new MailAddress("/*sender's email address goes here*/", "Learn with Marv");
+            var senderPassword = "";//sender's password goes here
             var receiverEmail = new MailAddress(emailID);
             string subject = "Account Creation Successfully!";
             string body = "<br/><br/>We are glad to inform you that your account has successfully been created." +
                 " Please click on the link below to verify your account.<br/><br/>" +
                 $"<a href = {link}>{link}</a>";
-
+            
+            // Gmail Settings
             var smtp = new SmtpClient
             {
                 Host = "smtp.gmail.com",
